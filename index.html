@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Connect - Anna University Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        /* 🌟 Enhanced General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: white;
+            overflow-x: hidden;
+            background: radial-gradient(circle at 20% 20%, #000, #050521, #000);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* 🎬 Enhanced Background Video Animation */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.3;
+            filter: blur(2px) brightness(0.7);
+        }
+
+        /* ✨ Animated Background Elements */
+        .bg-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 45, 85, 0.3);
+            animation: floatParticle 15s infinite linear;
+        }
+
+        .particle:nth-child(2n) {
+            background: rgba(255, 159, 10, 0.3);
+            animation-duration: 20s;
+        }
+
+        .particle:nth-child(3n) {
+            background: rgba(0, 150, 255, 0.3);
+            animation-duration: 25s;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* 🌈 Enhanced Header with Glass Morphism */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            animation: slideDown 0.8s ease-out;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header .left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header h1 {
+            color: #ff2d55;
+            font-size: 1.9rem;
+            position: relative;
+            overflow: hidden;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff2d55, transparent);
+            animation: textGlowLine 3s infinite;
+        }
+
+        @keyframes textGlowLine {
+            0%, 100% {
+                transform: translateX(-100%);
+            }
+            50% {
+                transform: translateX(100%);
+            }
+        }
+
+        .search-box {
+            position: relative;
+            animation: fadeInLeft 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .search-box input {
+            padding: 10px 40px 10px 15px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            width: 280px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .search-box input:focus {
+            box-shadow: 0 0 15px #ff2d55;
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            color: #ff2d55;
+            transition: transform 0.3s;
+        }
+
+        .search-box input:focus + i {
+            transform: scale(1.2);
+        }
+
+        .icons {
+            animation: fadeInRight 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .icons i {
+            font-size: 1.5rem;
+            margin-left: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icons i:hover {
+            transform: scale(1.2);
+            color: #ff2d55;
+            background: rgba(255, 45, 85, 0.2);
+        }
+
+        .icons i::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: rgba(255, 45, 85, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .icons i:hover::after {
+            opacity: 1;
+            animation: pulseIcon 1s infinite;
+        }
+
+        @keyframes pulseIcon {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* 🔔 Enhanced Notification Box */
+        .notification-box {
+            position: fixed;
+            top: 80px;
+            right: 40px;
+            width: 320px;
+            background: rgba(20, 20, 30, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255,45,85,0.4);
+            padding: 20px;
+            display: none;
+            z-index: 20;
+            transform-origin: top right;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .notification-box.show {
+            display: block;
+            animation: notificationPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes notificationPop {
+            0% {
+                opacity: 0;
+                transform: scale(0) translateY(-20px);
+            }
+            80% {
+                transform: scale(1.1) translateY(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .notification-box h4 {
+            color: #ff2d55;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2rem;
+        }
+
+        .notification-box h4 i {
+            animation: bellRing 0.5s 3;
+        }
+
+        @keyframes bellRing {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+        }
+
+        .notification-box p {
+            font-size: 0.95rem;
+            color: #ddd;
+            line-height: 1.5;
+        }
+
+        /* 👤 Enhanced Profile Section */
+        .profile {
+            text-align: center;
+            margin-top: 70px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 25px #ff2d55;
+            animation: pulse 3s infinite ease-in-out, rotateProfile 20s infinite linear;
+            object-fit: cover;
+        }
+
+        @keyframes rotateProfile {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 0 25px #ff2d55, 0 0 50px rgba(255, 45, 85, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 50px #ff9f0a, 0 0 100px rgba(255, 159, 10, 0.3);
+            }
+        }
+
+        .profile h2 {
+            margin-top: 20px;
+            font-size: 1.8rem;
+            animation: textGlow 2s infinite alternate;
+            font-weight: 600;
+            background: linear-gradient(45deg, #ff2d55, #ff9f0a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 5px 0;
+        }
+
+        @keyframes textGlow {
+            from { 
+                text-shadow: 0 0 10px #ff2d55, 0 0 20px rgba(255, 45, 85, 0.5);
+            }
+            to { 
+                text-shadow: 0 0 20px #ff9f0a, 0 0 40px rgba(255, 159, 10, 0.5);
+            }
+        }
+             /* 🏆 Rankings Section */
+        .rankings-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        .rankings-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #ff2d55, #ff9f0a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .rankings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .ranking-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideInRight 0.5s ease-out both;
+        }
+
+        .ranking-item:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 15px rgba(255, 45, 85, 0.3);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .rank-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-right: 20px;
+            min-width: 50px;
+            text-align: center;
+            background: linear-gradient(45deg, #ff2d55, #ff9f0a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .rank-number.top-3 {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .college-info {
+            flex: 1;
+        }
+
+        .college-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #ff9f0a;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .stars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .stars i {
+            color: #ff9f0a;
+            font-size: 1rem;
+        }
+
+        .rating-value {
+            font-weight: 600;
+            color: #ff9f0a;
+        }
+
+        .ranking-details {
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .ranking-detail {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+
+        .ranking-detail i {
+            color: #ff2d55;
+        }
+
+        /* ✨ Enhanced College Cards with Ratings */
+        .college-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin: 50px 0;
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        .college-card {
+            position: relative;
+            width: 320px;
+            height: 240px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            animation: floatCard 6s infinite ease-in-out;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes floatCard {
+            0%, 100% { 
+                transform: translateY(0) rotateX(0);
+            }
+            50% { 
+                transform: translateY(-15px) rotateX(5deg);
+            }
+        }
+
+        .college-card:hover {
+            transform: scale(1.08) rotateY(10deg) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(255, 45, 85, 0.4);
+        }
+
+        .college-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 45, 85, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+            z-index: 1;
+        }
+
+        .college-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .college-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s;
+        }
+
+        .college-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .college-card h3 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 1.1rem;
+            color: #ff9f0a;
+            z-index: 2;
+            transform: translateY(100%);
+            transition: transform 0.5s;
+            font-weight: 600;
+        }
+
+        .college-card:hover h3 {
+            transform: translateY(0);
+        }
+
+        .card-rating {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 3;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-rating i {
+            color: #ff9f0a;
+            font-size: 0.9rem;
+        }
+
+        .card-rating span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(45deg, #ff2d55, #ff9f0a);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 18px;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s;
+            animation: pulsePlay 2s infinite;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(255, 45, 85, 0.5);
+        }
+
+        @keyframes pulsePlay {
+            0% { 
+                box-shadow: 0 0 0 0 rgba(255,45,85,0.6);
+            }
+            70% { 
+                box-shadow: 0 0 0 15px rgba(255,45,85,0);
+            }
+            100% { 
+                box-shadow: 0 0 0 0 rgba(255,45,85,0);
+            }
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(45deg, #ff5f85, #ffb347);
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* 🎥 Enhanced Video Page */
+        .video-page {
+            display: none;
+            text-align: center;
+            margin-top: 60px;
+            animation: zoomIn 0.8s ease-out forwards;
+            padding: 0 20px;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .video-page h2 {
+            color: #ff2d55;
+            margin-bottom: 30px;
+            animation: textGlow 2s infinite alternate;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .video-page video {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px #ff2d55;
+            transition: all 0.5s;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .video-page video:hover {
+            box-shadow: 0 0 40px #ff9f0a;
+            transform: scale(1.02);
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            background: linear-gradient(45deg, #ff2d55, #ff9f0a);
+            border: none;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(255, 45, 85, 0.4);
+        }
+
+        .back-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .back-btn:hover::before {
+            left: 100%;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 45, 85, 0.6);
+        }
+
+        /* 🩷 Enhanced Footer */
+        footer {
+            text-align: center;
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease-out 1s both;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        footer span {
+            color: #ff2d55;
+            position: relative;
+            font-weight: 600;
+        }
+
+        footer span::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #ff2d55;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        footer:hover span::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        footer .socials {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #ff2d55;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        footer a:hover {
+            color: #ff2d55;
+            transform: translateY(-5px);
+            background: rgba(255, 45, 85, 0.2);
+        }
+
+        footer a:hover::after {
+            transform: scaleX(1);
+        }
+        /* ✨ Page Transition */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff2d55, #ff9f0a);
+            z-index: 1000;
+            transform: scaleY(0);
+            transform-origin: bottom;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .page-transition.active {
+            animation: pageTransition 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+        }
+
+        @keyframes pageTransition {
+            0% {
+                transform: scaleY(0);
+            }
+            50% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+        }
+
+        /* ✨ Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: floatElement 20s infinite linear;
+        }
+
+        @keyframes floatElement {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            33% {
+                transform: translate(30px, 50px) rotate(120deg);
+            }
+            66% {
+                transform: translate(-20px, 80px) rotate(240deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* 📱 Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-box input {
+                width: 200px;
+            }
+            
+            .college-card {
+                width: 280px;
+                height: 210px;
+            }
+            
+            .profile img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile h2 {
+                font-size: 1.5rem;
+            }
+            
+            footer .socials {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .ranking-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .rank-number {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🎬 Background Video -->
+    <video class="bg-video" autoplay muted loop>
+        <source src="https://cdn.pixabay.com/video/2016/03/01/1190-156529963_tiny.mp4" type="video/mp4">
+    </video>
+
+    <!-- ✨ Animated Background Particles -->
+    <div class="bg-particles" id="bgParticles"></div>
+
+    <!-- ✨ Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- ✨ Page Transition Overlay -->
+    <div class="page-transition" id="pageTransition">College Connect</div>
+
+    <header>
+        <div class="left">
+            <h1>College Connect</h1>
+            <div class="search-box">
+                <input type="text" id="search" placeholder="Search Colleges...">
+                <i class="fa-solid fa-search"></i>
+            </div>
+        </div>
+        <div class="icons">
+            <i class="fa-solid fa-bell" id="notificationIcon"></i>
+            <i class="fa-solid fa-user" id="profileIcon"></i>
+            <i class="fa-solid fa-gear" id="settingsIcon"></i>
+        </div>
+    </header>
+
+    <div class="notification-box" id="notificationBox">
+        <h4><i class="fa-solid fa-bell"></i> New Update!</h4>
+   <p>🎓 Anna University announces a new Tech Symposium this weekend. Don't miss it! Register now for exciting workshops and competitions.</p>
+    </div>
+
+    <section id="homePage">
+        <div class="profile">
+            <img src="https://i.ibb.co/7xqXbhFh/Selva-Linked-In-Photo.png" alt="Selvapriya">
+            <h2>Welcome, Selvapriya 🌸</h2>
+        </div>
+
+        <!-- 🏆 Rankings Section -->
+        <div class="rankings-section">
+            <h2>🏆 Top College Rankings</h2>
+            <div class="rankings-container" id="rankingsContainer">
+                <!-- Rankings will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="college-container" id="collegeContainer">
+            <!-- College cards will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <section class="video-page" id="videoPage">
+        <h2>🎥 College Showcase</h2>
+        <video controls autoplay>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4">
+        </video><br>
+        <button class="back-btn" id="backBtn"><i class="fas fa-arrow-left"></i> Back to Colleges</button>
+    </section>
+
+    <footer>
+        <p>Powered by <span>Anna University Zone</span></p>
+        <div class="socials">
+            <a href="#"><i class="fab fa-google"></i> Google</a>
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fab fa-netflix"></i> Netflix</a>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // College data with ratings and rankings
+        const colleges = [
+            {
+                id: 1,
+                name: "Jayaraj Annapackiam CSI College of Engineering",
+                rating: 4.8,
+                placement: 92,
+                faculty: 4.7,
+                infrastructure: 4.6,
+                image: "https://i.ibb.co/tpsL0qy4/IMG-20251021-213118.jpg",
+                rank: 1
+            },
+            {
+                id: 2,
+                name: "PSN College of Engineering and Technology",
+                rating: 4.7,
+                placement: 90,
+                faculty: 4.6,
+                infrastructure: 4.5,
+                image: "https://i.ibb.co/84dctdd1/IMG-20251021-213104.jpg",
+                rank: 2
+            },
+            {
+                id: 3,
+                name: "Sivathai Adhithir College of Engineering",
+                rating: 4.6,
+                placement: 88,
+                faculty: 4.5,
+                infrastructure: 4.4,
+                image: "https://i.ibb.co/RkVzXYcm/IMG-20251021-213043.jpg",
+                rank: 3
+            }
+        ];
+
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Create animated background particles
+        function createParticles() {
+            const container = document.getElementById('bgParticles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size and position
+                const size = Math.random() * 20 + 5;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}vw`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Create floating elements
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const elementCount = 15;
+            
+            for (let i = 0; i < elementCount; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                
+                // Random size, position and animation
+                const size = Math.random() * 100 + 20;
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 20 + 20;
+                
+                element.style.width = `${size}px`;
+                element.style.height = `${size}px`;
+                element.style.top = `${top}vh`;
+                element.style.left = `${left}vw`;
+                element.style.animationDelay = `${delay}s`;
+                element.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(element);
+            }
+        }
+
+        // Generate star rating HTML
+        function generateStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (halfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Populate rankings
+        function populateRankings() {
+            const container = document.getElementById('rankingsContainer');
+            
+            // Sort colleges by rank
+            const sortedColleges = [...colleges].sort((a, b) => a.rank - b.rank);
+            
+            sortedColleges.forEach((college, index) => {
+                const delay = index * 100;
+                
+                const rankingItem = document.createElement('div');
+                rankingItem.className = 'ranking-item';
+                rankingItem.style.animationDelay = `${delay}ms`;
+                
+                rankingItem.innerHTML = `
+                    <div class="rank-number ${college.rank <= 3 ? 'top-3' : ''}">#${college.rank}</div>
+                    <div class="college-info">
+                        <h3>${college.name}</h3>
+                        <div class="rating">
+                            <div class="stars">
+                                ${generateStars(college.rating)}
+                            </div>
+                            <span class="rating-value">${college.rating}/5</span>
+                        </div>
+                        <div class="ranking-details">
+                            <div class="ranking-detail">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Placement: ${college.placement}%</span>
+                            </div>
+                            <div class="ranking-detail">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <span>Faculty: ${college.faculty}/5</span>
+                            </div>
+                            <div class="ranking-detail">
+                                <i class="fas fa-building"></i>
+                                <span>Infrastructure: ${college.infrastructure}/5</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(rankingItem);
+            });
+        }
+
+        // Populate college cards
+        function populateCollegeCards() {
+            const container = document.getElementById('collegeContainer');
+            
+            colleges.forEach((college, index) => {
+                const delay = (index + 1) * 100;
+                
+                const collegeCard = document.createElement('div');
+                collegeCard.className = 'college-card';
+                collegeCard.setAttribute('data-aos', 'fade-up');
+                collegeCard.setAttribute('data-aos-delay', delay);
+                
+                collegeCard.innerHTML = `
+                    <img src="${college.image}">
+                    <div class="card-rating">
+                        <i class="fas fa-star"></i>
+                        <span>${college.rating}</span>
+                    </div>
+                    <h3>${college.name}</h3>
+                    <button class="play-btn">▶</button>
+                `;
+                
+                // Add event listener to play button
+                const playBtn = collegeCard.querySelector('.play-btn');
+                playBtn.addEventListener('click', openVideo);
+                
+                container.appendChild(collegeCard);
+            });
+        }
+
+        // Page transition animation
+        function playPageTransition(callback) {
+            const transition = document.getElementById('pageTransition');
+            transition.classList.add('active');
+            
+            setTimeout(() => {
+                if (callback) callback();
+                setTimeout(() => {
+                    transition.classList.remove('active');
+                }, 800);
+            }, 400);
+        }
+
+        /* Notification popup */
+        function showNotification() {
+            const box = document.getElementById('notificationBox');
+            box.classList.add('show');
+            new Audio("https://assets.mixkit.co/sfx/preview/mixkit-bell-notification-933.mp3").play();
+            setTimeout(() => box.classList.remove('show'), 5000);
+        }
+
+        /* Filter colleges */
+        function filterColleges() {
+            const search = document.getElementById("search").value.toLowerCase();
+            const cards = document.querySelectorAll(".college-card");
+            cards.forEach(card => {
+                const name = card.querySelector("h3").innerText.toLowerCase();
+                card.style.display = name.includes(search) ? "block" : "none";
+            });
+        }
+
+        /* Video navigation */
+        function openVideo() {
+            playPageTransition(() => {
+                document.getElementById("homePage").style.display = "none";
+                document.getElementById("videoPage").style.display = "block";
+                // Scroll to top when opening video
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        function goBack() {
+            playPageTransition(() => {
+                document.getElementById("videoPage").style.display = "none";
+                document.getElementById("homePage").style.display = "block";
+                // Scroll to top when going back
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Profile menu function
+        function showProfileMenu() {
+            alert("Profile menu would open here!");
+        }
+
+        // Settings function
+        function showSettings() {
+            alert("Settings would open here!");
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            createFloatingElements();
+            populateRankings();
+            populateCollegeCards();
+            
+            // Add event listeners
+            document.getElementById('notificationIcon').addEventListener('click', showNotification);
+            document.getElementById('profileIcon').addEventListener('click', showProfileMenu);
+            document.getElementById('settingsIcon').addEventListener('click', showSettings);
+            document.getElementById('backBtn').addEventListener('click', goBack);
+            document.getElementById('search').addEventListener('input', filterColleges);
+            
+            // Add typing effect to search placeholder
+            const searchInput = document.getElementById('search');
+            const placeholderText = "Search Colleges...";
+            let i = 0;
+            
+            function typePlaceholder() {
+                if (i < placeholderText.length) {
+                    searchInput.placeholder += placeholderText.charAt(i);
+                    i++;
+                    setTimeout(typePlaceholder, 100);
+                }
+            }
+            
+            // Start typing effect after a delay
+            setTimeout(typePlaceholder, 1000);
+        });
+    </script>
+</body>
+</html> 
